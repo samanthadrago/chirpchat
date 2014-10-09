@@ -29,3 +29,9 @@ get '/logout' do
   session[:user_id]=nil
   redirect '/'
 end
+
+post '/chirps' do
+  Chirp.create(params)
+  p params
+  redirect "/users/#{params[:user_id]}"
+end
