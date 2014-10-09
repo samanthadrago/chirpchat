@@ -1,0 +1,7 @@
+<header>
+  <% if session[:user_id] != nil %>
+    <%= erb :_logged_in %>
+  <% else %>
+    <%= erb :_logged_out %>
+  <% end %>
+</header>
