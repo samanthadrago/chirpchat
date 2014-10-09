@@ -1,4 +1,6 @@
 get '/' do
+  @users = User.all
+  @user = User.find(params[:id])
   erb :index
 end
 
@@ -18,7 +20,7 @@ post '/login' do
   p @user
   if @user
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
+    redirect "/"
   else
     @errors = "Hey, you don't exist :( Sign up to chirp!"
     erb :index
@@ -26,7 +28,7 @@ post '/login' do
 end
 
 get '/logout' do
-  session[:user_id]=nil
+  session.clear
   redirect '/'
 end
 

@@ -2,22 +2,12 @@
   <%= erb :_header %>
   <h1>Welcome to ChirpChat!</h1>
 
-  <form action="/users" method="post">
-    <p>Create a new account</p>
-    <br>
-    <div><label for="first_name"> First Name:</label><div class="form-box"><input type="text" name="first_name" required></div></div><br>
-    <div><label for="last_name" > Last Name:</label><div class="form-box"><input type="text" name="last_name" required></div></div><br>
-    <div><label for="email"> Your Email:</label><div class="form-box"><input type="text" name="email" required></div></div><br>
-    <div><label for="username"> Username:</label><div class="form-box"><input type="text" name="username" required></div></div><br>
-    <div><label for="password"> Choose a Password:</label><div class="form-box"><input type="password" name="password" required></div></div><br>
-    <input type="submit" value="Sign up!">
-  </form>
+  <% if session[:user_id] != nil %>
+    <%= erb :_global_chirps %>
+   <% else %>
+    <%= erb :_signup_form %>
+    <%= erb :_login_form %>
+  <% end %>
 
-    <form action="/login" method="post">
-    <p>Log in</p>
-    <br>
-    <div><label for="username"> Username:</label><div class="form-box"><input type="text" name="username" required></div></div><br>
-    <div><label for="password"> Password:</label><div class="form-box"><input type="password" name="password" required></div></div><br>
-    <input type="submit" value="Log in">
-  </form>
+
 </div>

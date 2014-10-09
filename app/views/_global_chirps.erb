@@ -1,0 +1,9 @@
+<div>
+  <% Chirp.all.each do |chirp| %>
+  <div class='chirps'>
+    <%= chirp.user.username %>
+    <%= chirp.content %>
+    <%= chirp.created_at %>
+  </div>
+    <% end %>
+</div>
