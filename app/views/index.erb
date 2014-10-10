@@ -3,6 +3,7 @@
   <h1>Welcome to ChirpChat!</h1>
 
   <%= erb :_signup_form %>
+  <%= flash[:error] unless current_user %>
   <%= erb :_login_form %>
 
 </div>

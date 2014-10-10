@@ -16,17 +16,17 @@ post '/users' do
 end
 
 get '/users/:id' do
-  # @user = User.find(params[:id])
   erb :profile
 end
 
 post '/login' do
   user = User.find_by_username (params[:username])
-  session[:user_id] = user.id
-  if current_user
+  if user.password == params[:password]
+    session[:user_id] = user.id
+    current_user
     redirect '/home'
   else
-    @errors = "Hey, you don't exist :( Sign up to chirp!"
+    flash[:login] = "We couldn't find username or password."
     redirect '/'
   end
 end
