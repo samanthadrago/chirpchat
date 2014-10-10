@@ -15,6 +15,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 gem 'pry'
 gem 'shotgun'
+gem 'awesome_print'
 
 group :test do
   gem 'shoulda-matchers'
