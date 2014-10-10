@@ -1,5 +1,5 @@
 <header>
-  <% if session[:user_id] != nil %>
+  <% if @current_user %>
     <%= erb :_logged_in %>
   <% else %>
     <%= erb :_logged_out %>

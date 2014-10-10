@@ -1,7 +1,7 @@
 <div>
   <form action="/chirps" method="post" id='chirp'>
     <div><label for="Content"> Chirp:</label><div class="form-box"><textarea form="chirp" type="text" name="content" required></textarea></div></div><br>
-    <input type="hidden" name="user_id" value="<%= @user.id %>">
+    <input type="hidden" name="user_id" value="<%= @current_user %>">
     <input type="submit" value="Chirp!">
   </form>
 </div>

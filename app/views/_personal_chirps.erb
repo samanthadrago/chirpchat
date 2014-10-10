@@ -1,7 +1,10 @@
+
+
 <div>
-  <% @user.chirps.each do |chirp| %>
+  <%= puts "****#{@current_user}*****" %>
+  <% current_user.chirps.each do |chirp| %>
   <div class='chirps'>
-    <%= @user.username %>
+    <%= chirp.username %>
     <%= chirp.content %>
     <%= chirp.created_at %>
   </div>

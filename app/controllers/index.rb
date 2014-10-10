@@ -1,29 +1,34 @@
+require_relative '../helpers/helper'
+
 get '/' do
-  @users = User.all
-  @user = User.find(params[:id])
   erb :index
+end
+
+get '/home' do
+  @users = User.all
+  erb :home
 end
 
 post '/users' do
   user = User.create(params)
   session[:user_id]=user.id
-  redirect "/users/#{user.id}"
+  redirect "/home"
 end
 
 get '/users/:id' do
-  @user = User.find(params[:id])
+  # @user = User.find(params[:id])
   erb :profile
 end
 
 post '/login' do
-  @user= User.find_by_username (params[:username])
-  p @user
-  if @user
-    session[:user_id] = @user.id
-    redirect "/"
+  # current_user
+  # @user= User.find_by_username (params[:username])
+  if current_user
+    # session[:user_id] = @user.id
+    redirect '/home'
   else
     @errors = "Hey, you don't exist :( Sign up to chirp!"
-    erb :index
+    redirect '/'
   end
 end
 
@@ -34,6 +39,5 @@ end
 
 post '/chirps' do
   Chirp.create(params)
-  p params
-  redirect "/users/#{params[:user_id]}"
+  redirect "/users/#{@current_user.id}"
 end
