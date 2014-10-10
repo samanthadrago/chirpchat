@@ -27,3 +27,6 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker'
 end
+
+#BCrypt
+gem 'bcrypt'

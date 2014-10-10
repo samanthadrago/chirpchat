@@ -1,4 +1,5 @@
 require_relative '../helpers/helper'
+require 'bcrypt'
 
 get '/' do
   erb :index
@@ -10,8 +11,10 @@ get '/home' do
 end
 
 post '/users' do
-  user = User.create(params)
-  session[:user_id]=user.id
+  @user = User.new(params)
+  @user.password = params[:password]
+  @user.save
+  session[:user_id] = @user.id
   redirect "/home"
 end
 
@@ -20,9 +23,9 @@ get '/users/:id' do
 end
 
 post '/login' do
-  user = User.find_by_username (params[:username])
-  if user.password == params[:password]
-    session[:user_id] = user.id
+  @user = User.find_by_username (params[:username])
+  if @user.password == params[:password]
+    session[:user_id] = @user.id
     current_user
     redirect '/home'
   else
