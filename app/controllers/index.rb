@@ -21,10 +21,9 @@ get '/users/:id' do
 end
 
 post '/login' do
-  # current_user
-  # @user= User.find_by_username (params[:username])
+  user = User.find_by_username (params[:username])
+  session[:user_id] = user.id
   if current_user
-    # session[:user_id] = @user.id
     redirect '/home'
   else
     @errors = "Hey, you don't exist :( Sign up to chirp!"
@@ -33,8 +32,8 @@ post '/login' do
 end
 
 get '/logout' do
-  session.clear
   redirect '/'
+  session.clear
 end
 
 post '/chirps' do
