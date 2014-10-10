@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :chirps
@@ -13,6 +15,17 @@ class User < ActiveRecord::Base
       followers << User.find(rel.follower_id)
     end
     followers
+  end
+
+  include BCrypt
+
+  def password
+    @password ||= Password.new(secure_password)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.secure_password = @password
   end
 end
 
