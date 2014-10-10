@@ -1,0 +1,90 @@
+.container {
+  width: 100%;
+  color: #383838;
+  font-family: helvetica;
+}
+
+hgroup {
+  background-color: #383838;
+  text-align: center;
+}
+
+h1 {
+  margin: 0px;
+  padding-top: 2%;
+  color: #E09584;
+}
+
+h2 {
+  padding-bottom: 1%;
+  margin: 0px;
+  color: #E09584;
+}
+
+h3 {
+  text-align: center;
+  font-size: 3em;
+  margin: 10px;
+}
+
+form label {
+  font-family: helvetica;
+}
+
+.forms {
+  width: 100%;
+  height: 500px;
+  background-color: #9FEAE5;
+}
+
+.signup_form {
+  float: left;
+  margin-left: 10%;
+}
+
+.login_form {
+  float: right;
+  margin-right: 10%;
+}
+
+input[type=text] {
+  padding:5px;
+  border:2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=password] {
+  padding:5px;
+  border:2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=text]:focus {
+  border-color:#333;
+}
+
+input[type=submit] {
+  padding:5px 15px;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.form-box {
+  float: right;
+}
+
+form {
+  padding: 5px;
+}
+
+form label {
+  font-size: 20px;
+  font-style: bold;
+  padding-right: 10px;
+  display: inline;
+}

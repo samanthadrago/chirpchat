@@ -1,9 +1,18 @@
 <div class="container">
 
-  <h1>Welcome to ChirpChat!</h1>
+  <hgroup>
+    <h1>ChirpChat!</h1>
+    <h2>Ew</h2>
+  </hgroup>
 
-  <%= erb :_signup_form %>
-  <%= flash[:error] unless current_user %>
-  <%= erb :_login_form %>
+  <div class='forms'>
+    <div class='signup_form'>
+      <%= erb :_signup_form %>
+    </div>
+    <div class='login_form'>
+      <%= flash[:error] unless current_user %>
+      <%= erb :_login_form %>
+    </div>
+  </div>
 
 </div>
