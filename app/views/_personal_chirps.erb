@@ -1,9 +1,9 @@
 
 
 <div>
-  <% current_user.chirps.each do |chirp| %>
+  <% @user.chirps.each do |chirp| %>
   <div class='chirps'>
-    <%= chirp.username %>
+    <%= @user.username %>
     <%= chirp.content %>
     <%= chirp.created_at %>
   </div>

@@ -1,9 +1,15 @@
 <div class="container">
 
   <%= erb :_header %>
-  <h1>Hello, <%= @current_user.first_name %></h1>
+
+  <% if current_user.id != @user.id %>
+    <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1><br>
+    <%= erb :_follow_button %>
+  <% else %>
+    <h1>Hello, <%= @current_user.first_name %></h1>
   <br>
-  <%= erb :_chirp_form %>
+    <%= erb :_chirp_form %>
+  <% end %>
 
   <%= erb :_personal_chirps %>
 

@@ -16,6 +16,7 @@ post '/users' do
 end
 
 get '/users/:id' do
+  @user = User.find(params[:id])
   erb :profile
 end
 
@@ -38,5 +39,5 @@ end
 
 post '/chirps' do
   Chirp.create(params)
-  redirect "/users/#{@current_user.id}"
+  redirect "/users/#{current_user.id}"
 end
