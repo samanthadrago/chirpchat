@@ -2,6 +2,7 @@
   width: 100%;
   color: #383838;
   font-family: helvetica;
+  background-color: #383838;
 }
 
 hgroup {
@@ -13,6 +14,7 @@ h1 {
   margin: 0px;
   padding-top: 2%;
   color: #E09584;
+  text-align: center;
 }
 
 h2 {
@@ -91,4 +93,38 @@ form label {
 
 .chirp-box {
 
+}
+
+.personal_chirps {
+
+}
+
+.profile-div {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #9FEAE5;
+  position: center;
+  height: 1000px;
+  padding: 10px;
+}
+
+body{
+  background-color: #9FEAE5;
+}
+
+a {
+  padding: 10px;
+  color: #E09584;
+}
+
+.username{
+  color:#E09584;
+}
+
+.content{
+  color: #333;
+}
+
+.time{
+  color: #111;
 }

@@ -1,11 +1,11 @@
 
 
-<div>
+<div class="personal_chirps">
   <% @user.chirps.each do |chirp| %>
   <div class='chirps'>
-    <%= @user.username %>
-    <%= chirp.content %>
-    <%= chirp.created_at %>
+    <p class="username"><%= @user.username %></p>
+    <p class="content"><%= chirp.content %></p>
+    <p class="time"><%= chirp.created_at %></p>
   </div>
     <% end %>
 </div>
