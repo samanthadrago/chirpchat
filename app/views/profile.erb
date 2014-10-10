@@ -2,10 +2,11 @@
 
   <div class="profile-div">
   <%= erb :_header %>
+  <%= erb :_gravatar %>
 
   <% if current_user.id != @user.id %>
     <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1><br>
-    <%= erb :_follow_button %>
+    <%= erb :_follow_button, locals: {user: @user}%>
   <% else %>
     <h1>Hello, <%= @current_user.first_name %></h1>
   <br>

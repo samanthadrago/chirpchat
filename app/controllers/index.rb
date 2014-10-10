@@ -44,3 +44,8 @@ post '/chirps' do
   Chirp.create(params)
   redirect "/users/#{current_user.id}"
 end
+
+post '/users/:id/follow' do
+  current_user.followed_users << User.find(params[:id])
+  redirect '/home'
+end

@@ -21,6 +21,8 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
+require 'digest/md5'
+
 
 # config.i18n.enforce_available_locales = true
 
