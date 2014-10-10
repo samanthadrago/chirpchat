@@ -1,5 +1,6 @@
 <div class="container">
 
+  <div class="profile-div">
   <%= erb :_header %>
 
   <% if current_user.id != @user.id %>
@@ -12,6 +13,6 @@
   <% end %>
 
   <%= erb :_personal_chirps %>
-
+  </div>
 
 </div>
