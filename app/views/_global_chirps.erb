@@ -2,9 +2,9 @@
   <% current_user.followed_users.each do |f_u| %>
     <% f_u.chirps.each do |chirp| %>
       <div class='chirps'>
-        <%= f_u.username %>
-        <%= chirp.content %>
-        <%= chirp.created_at %>
+        <p class="username"><%= f_u.username %></p>
+        <p class="content"><%= chirp.content %></p>
+        <p class="time"><%= chirp.created_at %></p>
       </div>
     <% end %>
   <% end %>
